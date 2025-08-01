@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Samruddhi Khot | Portfolio</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; font-family: 'Segoe UI', sans-serif; }
+    body { background: linear-gradient(135deg, #f9f9f9, #e6f0ff); color: #333; }
+    a { text-decoration: none; color: #0077b6; transition: 0.3s; }
+    a:hover { color: #023e8a; }
+
+    /* Navbar */
+    nav {
+      position: fixed; width: 100%; top: 0; left: 0;
+      background: linear-gradient(90deg, #0077b6, #0096c7);
+      color: white; padding: 1rem 10%; display: flex;
+      justify-content: space-between; align-items: center;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2); z-index: 1000;
+    }
+    nav h1 { font-size: 1.5rem; font-weight: bold; }
+    nav ul { list-style: none; display: flex; gap: 1.5rem; }
+    nav ul li a { color: white; font-weight: 500; }
+    nav ul li a:hover { color: #ffd60a; }
+    .menu-toggle { display: none; flex-direction: column; cursor: pointer; }
+    .menu-toggle div { width: 25px; height: 3px; background: white; margin: 4px 0; transition: 0.3s; }
+    .nav-links { display: flex; }
+    .nav-links.active { display: block; position: absolute; top: 60px; right: 10%; background: #0077b6; padding: 1rem; border-radius: 8px; }
+    .nav-links.active li { margin: 1rem 0; }
+
+    /* Hero */
+    header {
+      height: 100vh;
+      background: linear-gradient(rgba(0,119,182,0.7), rgba(0,119,182,0.7)),
+        url('https://source.unsplash.com/1600x900/?technology,coding') center/cover no-repeat;
+      color: white; display: flex; flex-direction: column;
+      justify-content: center; align-items: center; text-align: center; padding: 0 10%;
+    }
+    header h1 { font-size: 3rem; margin-bottom: 1rem; animation: fadeIn 1.2s; }
+    header p { font-size: 1.3rem; margin-bottom: 1.5rem; animation: fadeInUp 1.5s; }
+    header .btn { background: #ffd60a; color: black; padding: 0.8rem 1.5rem; border-radius: 30px; font-weight: bold; }
+    header .btn:hover { background: #ffb703; }
+
+    /* Sections */
+    section { padding: 5rem 10%; animation: fadeIn 1s ease-in; }
+    section h2 { color: #0077b6; margin-bottom: 2rem; font-size: 2rem; border-bottom: 2px solid #0077b6; display: inline-block; }
+
+    /* Skills */
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; }
+    .skill { background: white; padding: 1rem; text-align: center; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s; }
+    .skill:hover { transform: scale(1.05); }
+
+    /* Projects */
+    .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+    .project-card { background: white; padding: 1.5rem; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.15); transition: transform 0.3s; }
+    .project-card:hover { transform: translateY(-8px); }
+    .project-card h3 { margin-bottom: 0.8rem; color: #0077b6; }
+
+    /* Internships */
+    .internship-card { background: white; padding: 1.5rem; margin-bottom: 1.5rem; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+    .internship-card h3 { margin-bottom: 0.5rem; color: #0077b6; }
+    .internship-card ul { margin-top: 0.5rem; }
+
+    /* Education Table */
+    table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+    th, td { border: 1px solid #0077b6; padding: 12px; text-align: center; }
+    th { background: #0077b6; color: white; }
+
+    /* Footer */
+    footer { background: #0077b6; color: white; text-align: center; padding: 1rem; margin-top: 2rem; }
+
+    /* Animations */
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+    @media(max-width: 768px) {
+      nav ul { display: none; flex-direction: column; }
+      .menu-toggle { display: flex; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav>
+    <h1>Samruddhi Khot</h1>
+    <div class="menu-toggle" id="menu-toggle">
+      <div></div><div></div><div></div>
+    </div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#internships">Internships</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#achievements">Achievements</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <header>
+    <h1>Hi, I'm Samruddhi Khot</h1>
+    <p>A Fresher | Java Developer | Full Stack Developer</p>
+    <a href="#" class="btn">Download Resume</a>
+  </header>
+
+  <section id="about">
+  <h2>About Me</h2>
+  <p>
+    I am <b>Samruddhi Khot</b>, a passionate and motivated Computer Science graduate from 
+    <b>VSM’s S.R. Kothiwale Institute of Technology, Nipani</b>. 
+    As a fresher, I bring strong skills in <b>Java, Spring Boot, React, MySQL, and Hibernate</b>, 
+    gained through academic projects and internships. I am dedicated to building clean, efficient, 
+    and user‑friendly full‑stack applications.  
+    My strengths lie in problem‑solving, adaptability, and teamwork, 
+    along with a keen interest in exploring emerging technologies.  
+    With a strong foundation in software engineering principles and hands‑on project experience, 
+    I am eager to begin my professional journey as a Full Stack Developer and grow into a 
+    dynamic role in the IT industry.
+  </p>
+</section>
+
+
+  <!-- Skills -->
+  <section id="skills">
+    <h2>Technical & Soft Skills</h2>
+    <div class="skills-grid">
+      <div class="skill">Java</div>
+      <div class="skill">Spring Boot</div>
+      <div class="skill">React</div>
+      <div class="skill">MySQL</div>
+      <div class="skill">Hibernate</div>
+      <div class="skill">JavaScript</div>
+      <div class="skill">HTML & CSS</div>
+      <div class="skill">Git & GitHub</div>
+      <div class="skill">SQL Server</div>
+      <div class="skill">OOP & REST APIs</div>
+      <div class="skill">Problem Solving</div>
+      <div class="skill">Teamwork</div>
+      <div class="skill">Adaptability</div>
+      <div class="skill">Communication Skills</div>
+      <div class="skill">Time Management</div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="project-card">
+        <h3>Vyom Ecomart</h3>
+        <ul>
+          <li>Developed a full-stack e-commerce application using Spring Boot and React.</li>
+          <li>Implemented features like product listing, cart management, and secure checkout.</li>
+          <li>Used MySQL for data storage and REST APIs for smooth communication.</li>
+        </ul>
+      </div>
+      <div class="project-card">
+        <h3>Image Gallery System</h3>
+        <ul>
+          <li>Built with Spring Boot, Hibernate, React, and MySQL.</li>
+          <li>Features include image upload, delete, filter, and dynamic gallery view.</li>
+          <li>Ensured responsive design and fast loading speed.</li>
+          <li><a href="https://willowy-biscotti-f1deef.netlify.app/" target="_blank">Live Demo</a></li>
+        </ul>
+      </div>
+      <div class="project-card">
+        <h3>Climate Cast</h3>
+        <ul>
+          <li>Weather forecasting app using HTML, CSS, and JavaScript.</li>
+          <li>Integrated with real-time weather APIs for accurate data.</li>
+          <li>Displays temperature, humidity, and condition updates by location.</li>
+          <li><a href="https://686223d85b0017aa72aeb377--incredible-marshmallow-1515c2.netlify.app/" target="_blank">Live Demo</a></li>
+        </ul>
+      </div>
+      <div class="project-card">
+        <h3>To‑Do App</h3>
+        <ul>
+          <li>Task management app using HTML, CSS, and JavaScript.</li>
+          <li>Allows users to add, edit, and delete tasks efficiently.</li>
+          <li>Responsive UI with persistent local storage.</li>
+          <li><a href="https://admirable-trifle-e76b32.netlify.app/" target="_blank">Live Demo</a></li>
+        </ul>
+      </div>
+      <div class="project-card">
+        <h3>Photo‑Snap</h3>
+        <ul>
+          <li>Interactive photo album application built with HTML, CSS, and JavaScript.</li>
+          <li>Enables users to upload, view, and browse through photos.</li>
+          <li>Designed for smooth navigation and a clean UI experience.</li>
+          <li><a href="https://stalwart-cupcake-36b88c.netlify.app/" target="_blank">Live Demo</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+ <section id="internships">
+  <h2>Internships</h2>
+  <div class="internship-card">
+    <h3>Java Full Stack Development Intern | Seven Mentor – Pune</h3>
+    <p><b>Project:</b> Image Gallery & Product Management System</p>
+    <ul>
+      <li>Built a full-stack web application with React (frontend) and Spring Boot, Hibernate, MySQL (backend).</li>
+      <li>Implemented image upload, display, delete, and filter features with data validations.</li>
+      <li>Developed product management modules including add, update, delete, and listing functionality.</li>
+      <li>Applied MVC architecture and RESTful APIs for clean and maintainable code structure.</li>
+    </ul>
+  </div>
+  <div class="internship-card">
+    <h3>AI & Data Science Intern | Inventeron Technologies LLP – Bangalore</h3>
+    <p><b>Project:</b> Face Mask Detection System</p>
+    <ul>
+      <li>Built and trained machine learning models using Python, TensorFlow, and Keras for computer vision tasks.</li>
+      <li>Developed a real-time face mask detection system using Convolutional Neural Networks (CNNs).</li>
+      <li>Collected, labeled, and preprocessed image datasets to improve accuracy and reliability.</li>
+      <li>Applied deep learning techniques to address real-world safety challenges in public health monitoring.</li>
+    </ul>
+  </div>
+  <div class="internship-card">
+    <h3>Web Development Intern | SV Mind Logic – Nipani</h3>
+    <p><b>Project:</b> College Website & Restaurant Website</p>
+    <ul>
+      <li>Developed two responsive websites: a college site and a restaurant site, both with modern UI/UX design.</li>
+      <li>Designed layouts using HTML, CSS, JavaScript, and Bootstrap for smooth navigation.</li>
+      <li>Integrated contact forms, image galleries, and menus tailored to each project’s requirements.</li>
+      <li>Tested and optimized for mobile responsiveness and cross-browser compatibility.</li>
+    </ul>
+  </div>
+</section>
+
+
+  <!-- Education -->
+  <section id="education">
+    <h2>Education</h2>
+    <table>
+      <tr>
+        <th>Degree</th>
+        <th>Institute</th>
+        <th>Year</th>
+        <th>Result</th>
+      </tr>
+      <tr>
+        <td>B.E. – Computer Science & Engineering</td>
+        <td>VSM’s S.R. Kothiwale Institute of Technology, Nipani</td>
+        <td>2021–2025</td>
+        <td>CGPA: 8.24</td>
+      </tr>
+      <tr>
+        <td>XII (PUC) – Science Stream</td>
+        <td>VSM G.I. Bagewadi PU College, Nipani</td>
+        <td>2021</td>
+        <td>74.33%</td>
+      </tr>
+      <tr>
+        <td>X (SSLC)</td>
+        <td>Gomtesh English Medium School, Nipani</td>
+        <td>2019</td>
+        <td>75.84%</td>
+      </tr>
+    </table>
+  </section>
+
+  <!-- Achievements & Certifications -->
+  <section id="achievements">
+    <h2>Achievements & Certifications</h2>
+    <ul>
+      <li>Selected for State‑level Poster Presentation & Exhibition (48th Series, 2024‑25).</li>
+      <li>Received Certificate of Acceptance and Publication for research paper.</li>
+      <li><a href="https://www.sololearn.com/en/certificates/CC-NRC2OLDC" target="_blank">Java Programming – SoloLearn</a></li>
+      <li><a href="https://www.geeksforgeeks.org/certificate/77464e29922fa7fab5096d0a09460866" target="_blank">SQL Programming – GeeksforGeeks</a></li>
+    </ul>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>📍 Bolewadi - 591211, Karnataka</p>
+    <p>📞 +91‑8904515012</p>
+    <p>📧 <a href="mailto:samruddhishrirangkhot@gmail.com">samruddhishrirangkhot@gmail.com</a></p>
+    <p>🌐 <a href="https://github.com/Samruddhikhot" target="_blank">GitHub Profile</a></p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Samruddhi Khot | Built with ❤️ using HTML, CSS, JS</p>
+  </footer>
+
+  <!-- Hamburger Script -->
+  <script>
+    const menuToggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>
