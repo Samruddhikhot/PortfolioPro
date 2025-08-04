@@ -4,6 +4,8 @@ Welcome to my personal developer portfolio! This portfolio showcases my skills, 
 
 🔗 **Live Portfolio:** [harmonious-mermaid-7e4af5.netlify.app](https://harmonious-mermaid-7e4af5.netlify.app)
 
+🔗 **Roadmap.sh:** [https://roadmap.sh/projects/portfolio-website]
+
 ---
 
 ## 📌 Overview
